@@ -1,6 +1,9 @@
+import 'package:crud_app/core/utils/services/api_services.dart';
 import 'package:crud_app/features/add_new_user/presentaion/views/add_new_user_screen.dart';
-import 'package:crud_app/features/list_view_screen/presentaion/manager/users_list_cubit/users_list_cubit.dart';
-import 'package:crud_app/features/list_view_screen/presentaion/views/widgets/custom_list_view.dart';
+import 'package:crud_app/features/get_all_users/presentaion/manager/users_list_cubit/get_all_users_cubit.dart';
+import 'package:crud_app/features/get_all_users/presentaion/views/widgets/custom_list_view.dart';
+import 'package:dio/dio.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,8 +12,10 @@ class ListViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<UsersListCubit, UsersListState>(
-      listener: (context, state) {},
+    return BlocConsumer<GetAllUsersCubit, GetAllUsersState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
@@ -27,6 +32,7 @@ class ListViewScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       onPressed: () {
+                        //  ApiService(Dio()).get(endPoint: 'users');
                         Navigator.push(
                             context,
                             MaterialPageRoute(
