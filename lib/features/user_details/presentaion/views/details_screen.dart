@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../get_all_users/data/models/users_model.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key, required this.users});
-  final UsersModel users;
+  const DetailsScreen({super.key, required this.usersModel});
+  final UsersModel usersModel;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          Text(users.name as String,
+          Text(usersModel.name as String,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500)),
           SizedBox(
             height: 50,
@@ -54,14 +54,14 @@ class DetailsScreen extends StatelessWidget {
               children: [
                 RowDetailsWidget(
                   icon: Icons.email_outlined,
-                  userdata: users.email as String,
+                  userdata: usersModel.email as String,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 RowDetailsWidget(
                   icon: Icons.person_outline_sharp,
-                  userdata: users.gender as String,
+                  userdata: usersModel.gender as String,
                 ),
               ],
             ),

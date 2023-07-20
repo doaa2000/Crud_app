@@ -29,7 +29,7 @@ class CustomListView extends StatelessWidget {
               ) =>
                   ListViewItem(
                     index: index,
-                    //     users: users[index],
+                    usersModel: users[index],
                     //  name: 'ddd' //users[index].name as String,
                   ),
               separatorBuilder: (context, index) => SizedBox(

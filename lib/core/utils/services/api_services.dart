@@ -56,7 +56,7 @@ class ApiService {
   }
 
   Future<void> delete({required String endPoint, required int id}) async {
-    var response = await dio.delete(
+    await dio.delete(
       '$_baseUrl$endPoint/$id',
     );
   }

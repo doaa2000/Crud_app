@@ -11,11 +11,11 @@ class ListViewItem extends StatelessWidget {
   const ListViewItem(
       {super.key,
       // required this.name,
-      // required this.users,
+      required this.usersModel,
       required this.index});
   // final String name;
   final int index;
-  // final UsersModel users;
+  final UsersModel usersModel;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<GetAllUsersCubit, GetAllUsersState>(
@@ -24,12 +24,12 @@ class ListViewItem extends StatelessWidget {
         var cubit = GetAllUsersCubit.get(context);
         return InkWell(
           onTap: () {
-            // Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //         builder: (context) => DetailsScreen(
-            //               users: users,
-            //             )));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailsScreen(
+                          usersModel: usersModel,
+                        )));
           },
           child: Container(
             width: double.infinity,
